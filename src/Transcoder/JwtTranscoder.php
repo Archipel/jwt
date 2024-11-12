@@ -190,7 +190,7 @@ class JwtTranscoder implements JwtTranscoderInterface {
     if ($key === NULL) {
       return FALSE;
     }
-    $encoded = $this->transcoder->encode($jwt->getPayload(), $key, $this->algorithm);
+    $encoded = $this->transcoder->encode((array)$jwt->getPayload(), $key, $this->algorithm);
     return $encoded;
   }
 
